@@ -1,3 +1,5 @@
+
+
 name: CI/CD
 
 on:
@@ -39,7 +41,6 @@ jobs:
 
       - name: Install Docker Compose
         run: |
-          DOCKER_COMPOSE_VERSION=2.16.0
           curl -L "https://github.com/docker/compose/releases/download/2.16.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
           chmod +x /usr/local/bin/docker-compose
           docker-compose --version
@@ -53,4 +54,3 @@ jobs:
           docker-compose -f docker-compose.yml up -d
           # Add your test commands here
           docker-compose -f docker-compose.yml down
-
